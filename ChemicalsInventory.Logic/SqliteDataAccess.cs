@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SQLite;
 using Dapper;
-using ChemicalsInventory.Logic.Models;
 
 namespace ChemicalsInventory.Logic
 {
@@ -41,6 +40,23 @@ namespace ChemicalsInventory.Logic
             }
         }
 
+        public static void UpdateUser(UserModel user)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                cnn.Execute("Update User set UserName=@UserName, UserPassword=@UserPassword  where UserId=@UserId", user);
+            }
+        }
+
+        public static UserModel GetUserByUserName(string userName)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var output = cnn.Query<UserModel>("Select * from User where UserName =@UserName", new {UserName= userName }).FirstOrDefault();
+                return output;
+            }
+        }
+
         #endregion
 
         #region Chemicals
@@ -66,7 +82,7 @@ namespace ChemicalsInventory.Logic
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                cnn.Execute("Insert into Chemical (ChemicalName, ChemicalQuantity) values (@ChemicalName, @ChemicalQuantity)", chemical);
+                cnn.Execute("Delete from Chemical where ChemicalId=@ChemicalId", chemical);
             }
         }
 
@@ -75,7 +91,17 @@ namespace ChemicalsInventory.Logic
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                cnn.Execute("Update Chemical (ChemicalName, ChemicalQuantity) values (@ChemicalName, @ChemicalQuantity)", chemical);
+                cnn.Execute("Update Chemical set ChemicalName = @ChemicalName, ChemicalQuantity = @ChemicalQuantity", chemical);
+            }
+
+        }
+
+        public static ChemicalModel GetChemicalById(int id)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var output = cnn.Query<ChemicalModel>("Select * from Chemical where ChemicalId =@ChemicalId", new { ChemicalId = id }).FirstOrDefault();
+                return output;
             }
         }
 
