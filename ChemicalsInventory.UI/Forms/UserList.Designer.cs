@@ -31,6 +31,7 @@ namespace ChemicalsInventory.UI
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnEdit = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnAddUser = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -42,7 +43,6 @@ namespace ChemicalsInventory.UI
             this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UserPassword = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UserId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
@@ -78,6 +78,17 @@ namespace ChemicalsInventory.UI
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(106, 180);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(94, 39);
+            this.btnCancel.TabIndex = 3;
+            this.btnCancel.Text = "الغاء";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Visible = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(6, 180);
@@ -103,14 +114,14 @@ namespace ChemicalsInventory.UI
             // 
             this.txtPassword.Location = new System.Drawing.Point(6, 70);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(169, 32);
+            this.txtPassword.Size = new System.Drawing.Size(169, 23);
             this.txtPassword.TabIndex = 1;
             // 
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(6, 32);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(169, 32);
+            this.txtName.Size = new System.Drawing.Size(169, 23);
             this.txtName.TabIndex = 0;
             // 
             // label2
@@ -118,7 +129,7 @@ namespace ChemicalsInventory.UI
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(203, 73);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 21);
+            this.label2.Size = new System.Drawing.Size(77, 16);
             this.label2.TabIndex = 0;
             this.label2.Text = "كلمة المرور: ";
             // 
@@ -127,7 +138,7 @@ namespace ChemicalsInventory.UI
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(181, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 21);
+            this.label1.Size = new System.Drawing.Size(104, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "اسم المستخدم: ";
             // 
@@ -157,11 +168,11 @@ namespace ChemicalsInventory.UI
             this.UserId});
             this.dgvUsers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvUsers.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvUsers.Location = new System.Drawing.Point(3, 29);
+            this.dgvUsers.Location = new System.Drawing.Point(3, 20);
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.RowHeadersVisible = false;
             this.dgvUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUsers.Size = new System.Drawing.Size(227, 264);
+            this.dgvUsers.Size = new System.Drawing.Size(227, 273);
             this.dgvUsers.TabIndex = 0;
             // 
             // UserName
@@ -177,7 +188,7 @@ namespace ChemicalsInventory.UI
             this.UserPassword.DataPropertyName = "UserPassword";
             this.UserPassword.HeaderText = "كلمة المرور";
             this.UserPassword.Name = "UserPassword";
-            this.UserPassword.Width = 96;
+            this.UserPassword.Width = 93;
             // 
             // UserId
             // 
@@ -186,24 +197,13 @@ namespace ChemicalsInventory.UI
             this.UserId.Name = "UserId";
             this.UserId.Visible = false;
             // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(106, 180);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(94, 39);
-            this.btnCancel.TabIndex = 3;
-            this.btnCancel.Text = "الغاء";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Visible = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
             // UserList
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(522, 297);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
-            this.Font = new System.Drawing.Font("Frutiger LT Arabic 55 Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UserList";

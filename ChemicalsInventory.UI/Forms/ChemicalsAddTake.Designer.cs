@@ -31,8 +31,6 @@ namespace ChemicalsInventory.UI
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvOrder = new System.Windows.Forms.DataGridView();
-            this.btnAddToOrder = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.radioButtonWithdraw = new System.Windows.Forms.RadioButton();
             this.radioButtonAdd = new System.Windows.Forms.RadioButton();
@@ -50,6 +48,8 @@ namespace ChemicalsInventory.UI
             this.OrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OrderDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AddOrTake = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAddToOrder = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -98,32 +98,6 @@ namespace ChemicalsInventory.UI
             this.dgvOrder.Size = new System.Drawing.Size(434, 261);
             this.dgvOrder.TabIndex = 5;
             // 
-            // btnAddToOrder
-            // 
-            this.btnAddToOrder.Image = global::ChemicalsInventory.UI.Properties.Resources.diskette;
-            this.btnAddToOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddToOrder.Location = new System.Drawing.Point(549, 285);
-            this.btnAddToOrder.Name = "btnAddToOrder";
-            this.btnAddToOrder.Size = new System.Drawing.Size(75, 42);
-            this.btnAddToOrder.TabIndex = 2;
-            this.btnAddToOrder.Text = "اضافة";
-            this.btnAddToOrder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddToOrder.UseVisualStyleBackColor = true;
-            this.btnAddToOrder.Click += new System.EventHandler(this.btnAddToOrder_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Image = global::ChemicalsInventory.UI.Properties.Resources.diskette;
-            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSave.Location = new System.Drawing.Point(6, 293);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 42);
-            this.btnSave.TabIndex = 2;
-            this.btnSave.Text = "حفظ";
-            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.radioButtonWithdraw);
@@ -140,7 +114,7 @@ namespace ChemicalsInventory.UI
             this.radioButtonWithdraw.Checked = true;
             this.radioButtonWithdraw.Location = new System.Drawing.Point(6, 19);
             this.radioButtonWithdraw.Name = "radioButtonWithdraw";
-            this.radioButtonWithdraw.Size = new System.Drawing.Size(59, 25);
+            this.radioButtonWithdraw.Size = new System.Drawing.Size(60, 20);
             this.radioButtonWithdraw.TabIndex = 0;
             this.radioButtonWithdraw.TabStop = true;
             this.radioButtonWithdraw.Text = "سحب";
@@ -151,7 +125,7 @@ namespace ChemicalsInventory.UI
             this.radioButtonAdd.AutoSize = true;
             this.radioButtonAdd.Location = new System.Drawing.Point(5, 55);
             this.radioButtonAdd.Name = "radioButtonAdd";
-            this.radioButtonAdd.Size = new System.Drawing.Size(60, 25);
+            this.radioButtonAdd.Size = new System.Drawing.Size(55, 20);
             this.radioButtonAdd.TabIndex = 1;
             this.radioButtonAdd.Text = "اضافة";
             this.radioButtonAdd.UseVisualStyleBackColor = true;
@@ -168,7 +142,7 @@ namespace ChemicalsInventory.UI
             // 
             this.txtQuantity.Location = new System.Drawing.Point(651, 111);
             this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(105, 32);
+            this.txtQuantity.Size = new System.Drawing.Size(105, 23);
             this.txtQuantity.TabIndex = 1;
             // 
             // cbCategory
@@ -177,7 +151,7 @@ namespace ChemicalsInventory.UI
             this.cbCategory.FormattingEnabled = true;
             this.cbCategory.Location = new System.Drawing.Point(549, 31);
             this.cbCategory.Name = "cbCategory";
-            this.cbCategory.Size = new System.Drawing.Size(207, 29);
+            this.cbCategory.Size = new System.Drawing.Size(207, 24);
             this.cbCategory.TabIndex = 0;
             this.cbCategory.SelectedIndexChanged += new System.EventHandler(this.cbCategory_SelectedIndexChanged);
             // 
@@ -187,7 +161,7 @@ namespace ChemicalsInventory.UI
             this.cbChemicals.FormattingEnabled = true;
             this.cbChemicals.Location = new System.Drawing.Point(549, 76);
             this.cbChemicals.Name = "cbChemicals";
-            this.cbChemicals.Size = new System.Drawing.Size(207, 29);
+            this.cbChemicals.Size = new System.Drawing.Size(207, 24);
             this.cbChemicals.TabIndex = 0;
             this.cbChemicals.SelectedIndexChanged += new System.EventHandler(this.cbChemicals_SelectedIndexChanged);
             // 
@@ -196,7 +170,7 @@ namespace ChemicalsInventory.UI
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(791, 173);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 21);
+            this.label4.Size = new System.Drawing.Size(94, 16);
             this.label4.TabIndex = 0;
             this.label4.Text = "ملاحظات الطلب";
             // 
@@ -205,7 +179,7 @@ namespace ChemicalsInventory.UI
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(762, 34);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(127, 21);
+            this.label3.Size = new System.Drawing.Size(132, 16);
             this.label3.TabIndex = 0;
             this.label3.Text = "قم باختيار  المجموعة :";
             // 
@@ -214,7 +188,7 @@ namespace ChemicalsInventory.UI
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(846, 122);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 21);
+            this.label2.Size = new System.Drawing.Size(42, 16);
             this.label2.TabIndex = 0;
             this.label2.Text = "الكمية";
             // 
@@ -223,7 +197,7 @@ namespace ChemicalsInventory.UI
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(779, 79);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 21);
+            this.label1.Size = new System.Drawing.Size(113, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "قم باختيار المركب :";
             // 
@@ -260,13 +234,38 @@ namespace ChemicalsInventory.UI
             this.AddOrTake.Name = "AddOrTake";
             this.AddOrTake.Visible = false;
             // 
+            // btnAddToOrder
+            // 
+            this.btnAddToOrder.Image = global::ChemicalsInventory.UI.Properties.Resources.diskette;
+            this.btnAddToOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddToOrder.Location = new System.Drawing.Point(549, 285);
+            this.btnAddToOrder.Name = "btnAddToOrder";
+            this.btnAddToOrder.Size = new System.Drawing.Size(75, 42);
+            this.btnAddToOrder.TabIndex = 2;
+            this.btnAddToOrder.Text = "اضافة";
+            this.btnAddToOrder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddToOrder.UseVisualStyleBackColor = true;
+            this.btnAddToOrder.Click += new System.EventHandler(this.btnAddToOrder_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Image = global::ChemicalsInventory.UI.Properties.Resources.diskette;
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSave.Location = new System.Drawing.Point(6, 293);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 42);
+            this.btnSave.TabIndex = 2;
+            this.btnSave.Text = "حفظ";
+            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // ChemicalsAddTake
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 21F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(901, 338);
             this.Controls.Add(this.groupBox1);
-            this.Font = new System.Drawing.Font("Frutiger LT Arabic 55 Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ChemicalsAddTake";

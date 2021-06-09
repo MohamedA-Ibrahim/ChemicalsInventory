@@ -109,7 +109,7 @@ namespace ChemicalsInventory
             // 
             this.txtName.Location = new System.Drawing.Point(6, 32);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(169, 32);
+            this.txtName.Size = new System.Drawing.Size(169, 23);
             this.txtName.TabIndex = 0;
             // 
             // label1
@@ -117,7 +117,7 @@ namespace ChemicalsInventory
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(181, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 21);
+            this.label1.Size = new System.Drawing.Size(95, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "اسم المجموعة:";
             // 
@@ -146,11 +146,11 @@ namespace ChemicalsInventory
             this.CategoryId});
             this.dgvCategory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCategory.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvCategory.Location = new System.Drawing.Point(3, 29);
+            this.dgvCategory.Location = new System.Drawing.Point(3, 20);
             this.dgvCategory.Name = "dgvCategory";
             this.dgvCategory.RowHeadersVisible = false;
             this.dgvCategory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCategory.Size = new System.Drawing.Size(227, 264);
+            this.dgvCategory.Size = new System.Drawing.Size(227, 273);
             this.dgvCategory.TabIndex = 0;
             // 
             // CategoryName
@@ -169,10 +169,11 @@ namespace ChemicalsInventory
             // 
             // CategoryList
             // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(522, 297);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
-            this.Font = new System.Drawing.Font("Frutiger LT Arabic 55 Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "CategoryList";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;

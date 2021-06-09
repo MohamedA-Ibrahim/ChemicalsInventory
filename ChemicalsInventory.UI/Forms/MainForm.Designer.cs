@@ -42,7 +42,7 @@ namespace ChemicalsInventory.UI
             // 
             // menuStrip1
             // 
-            this.menuStrip1.Font = new System.Drawing.Font("Frutiger LT Arabic 55 Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuItemChemicalsAddTake,
             this.MenuItemChemicalsList,
@@ -52,14 +52,14 @@ namespace ChemicalsInventory.UI
             this.MenuItemLogout});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(792, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(792, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // MenuItemCategoryList
             // 
             this.MenuItemCategoryList.Name = "MenuItemCategoryList";
-            this.MenuItemCategoryList.Size = new System.Drawing.Size(81, 25);
+            this.MenuItemCategoryList.Size = new System.Drawing.Size(81, 20);
             this.MenuItemCategoryList.Text = "المجموعات";
             this.MenuItemCategoryList.Click += new System.EventHandler(this.MenuItemCategoryList_Click);
             // 
@@ -67,7 +67,7 @@ namespace ChemicalsInventory.UI
             // 
             this.MenuItemChemicalsAddTake.Image = global::ChemicalsInventory.UI.Properties.Resources.add;
             this.MenuItemChemicalsAddTake.Name = "MenuItemChemicalsAddTake";
-            this.MenuItemChemicalsAddTake.Size = new System.Drawing.Size(112, 25);
+            this.MenuItemChemicalsAddTake.Size = new System.Drawing.Size(112, 20);
             this.MenuItemChemicalsAddTake.Text = "سحب / اضافة";
             this.MenuItemChemicalsAddTake.Click += new System.EventHandler(this.MenuItemChemicalsAddTake_Click);
             // 
@@ -75,7 +75,7 @@ namespace ChemicalsInventory.UI
             // 
             this.MenuItemChemicalsList.Image = global::ChemicalsInventory.UI.Properties.Resources.chemicals;
             this.MenuItemChemicalsList.Name = "MenuItemChemicalsList";
-            this.MenuItemChemicalsList.Size = new System.Drawing.Size(170, 25);
+            this.MenuItemChemicalsList.Size = new System.Drawing.Size(170, 20);
             this.MenuItemChemicalsList.Text = "قائمة المركبات الكيميائية";
             this.MenuItemChemicalsList.Click += new System.EventHandler(this.MenuItemChemicalsList_Click);
             // 
@@ -83,7 +83,7 @@ namespace ChemicalsInventory.UI
             // 
             this.MenuItemUsersList.Image = global::ChemicalsInventory.UI.Properties.Resources.man;
             this.MenuItemUsersList.Name = "MenuItemUsersList";
-            this.MenuItemUsersList.Size = new System.Drawing.Size(141, 25);
+            this.MenuItemUsersList.Size = new System.Drawing.Size(140, 20);
             this.MenuItemUsersList.Text = "قائمة المستخدمين";
             this.MenuItemUsersList.Click += new System.EventHandler(this.MenuItemUsersList_Click);
             // 
@@ -91,7 +91,7 @@ namespace ChemicalsInventory.UI
             // 
             this.MenuItemPrintReport.Image = global::ChemicalsInventory.UI.Properties.Resources.business_report__1_;
             this.MenuItemPrintReport.Name = "MenuItemPrintReport";
-            this.MenuItemPrintReport.Size = new System.Drawing.Size(131, 25);
+            this.MenuItemPrintReport.Size = new System.Drawing.Size(130, 20);
             this.MenuItemPrintReport.Text = "تقرير طلبات الجرد";
             // 
             // MenuItemLogout
@@ -99,7 +99,7 @@ namespace ChemicalsInventory.UI
             this.MenuItemLogout.Image = global::ChemicalsInventory.UI.Properties.Resources.logout__1_;
             this.MenuItemLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.MenuItemLogout.Name = "MenuItemLogout";
-            this.MenuItemLogout.Size = new System.Drawing.Size(113, 25);
+            this.MenuItemLogout.Size = new System.Drawing.Size(115, 20);
             this.MenuItemLogout.Text = "تسجيل الخروج";
             this.MenuItemLogout.Click += new System.EventHandler(this.MenuItemLogout_Click);
             // 
@@ -108,7 +108,7 @@ namespace ChemicalsInventory.UI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(792, 603);
             this.Controls.Add(this.menuStrip1);
-            this.Font = new System.Drawing.Font("Frutiger LT Arabic 55 Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);

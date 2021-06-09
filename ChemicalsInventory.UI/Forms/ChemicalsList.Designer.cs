@@ -71,10 +71,8 @@ namespace ChemicalsInventory.UI
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(283, 344);
+            this.groupBox1.Size = new System.Drawing.Size(262, 262);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "اضافة مركب";
@@ -85,25 +83,28 @@ namespace ChemicalsInventory.UI
             this.cbUnit.Items.AddRange(new object[] {
             "مليجرام",
             "علبة"});
-            this.cbUnit.Location = new System.Drawing.Point(6, 144);
+            this.cbUnit.Location = new System.Drawing.Point(5, 110);
+            this.cbUnit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbUnit.Name = "cbUnit";
-            this.cbUnit.Size = new System.Drawing.Size(169, 29);
+            this.cbUnit.Size = new System.Drawing.Size(148, 24);
             this.cbUnit.TabIndex = 6;
             // 
             // cbCategory
             // 
             this.cbCategory.FormattingEnabled = true;
-            this.cbCategory.Location = new System.Drawing.Point(6, 108);
+            this.cbCategory.Location = new System.Drawing.Point(5, 82);
+            this.cbCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbCategory.Name = "cbCategory";
-            this.cbCategory.Size = new System.Drawing.Size(169, 29);
+            this.cbCategory.Size = new System.Drawing.Size(148, 24);
             this.cbCategory.TabIndex = 6;
             this.cbCategory.SelectedIndexChanged += new System.EventHandler(this.cbCategory_SelectedIndexChanged);
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(106, 223);
+            this.btnEdit.Location = new System.Drawing.Point(93, 170);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(94, 39);
+            this.btnEdit.Size = new System.Drawing.Size(82, 30);
             this.btnEdit.TabIndex = 5;
             this.btnEdit.Text = "تعديل المحدد";
             this.btnEdit.UseVisualStyleBackColor = true;
@@ -111,9 +112,10 @@ namespace ChemicalsInventory.UI
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(106, 280);
+            this.btnCancel.Location = new System.Drawing.Point(93, 213);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(94, 39);
+            this.btnCancel.Size = new System.Drawing.Size(82, 30);
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "الغاء";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -122,9 +124,10 @@ namespace ChemicalsInventory.UI
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(6, 280);
+            this.btnSave.Location = new System.Drawing.Point(5, 213);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(94, 39);
+            this.btnSave.Size = new System.Drawing.Size(82, 30);
             this.btnSave.TabIndex = 4;
             this.btnSave.Text = "حفظ";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -133,9 +136,10 @@ namespace ChemicalsInventory.UI
             // 
             // btnAddChemical
             // 
-            this.btnAddChemical.Location = new System.Drawing.Point(6, 223);
+            this.btnAddChemical.Location = new System.Drawing.Point(5, 170);
+            this.btnAddChemical.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddChemical.Name = "btnAddChemical";
-            this.btnAddChemical.Size = new System.Drawing.Size(94, 39);
+            this.btnAddChemical.Size = new System.Drawing.Size(82, 30);
             this.btnAddChemical.TabIndex = 2;
             this.btnAddChemical.Text = "اضافة";
             this.btnAddChemical.UseVisualStyleBackColor = true;
@@ -143,33 +147,35 @@ namespace ChemicalsInventory.UI
             // 
             // txtQuantity
             // 
-            this.txtQuantity.Location = new System.Drawing.Point(6, 70);
+            this.txtQuantity.Location = new System.Drawing.Point(5, 53);
+            this.txtQuantity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(169, 32);
+            this.txtQuantity.Size = new System.Drawing.Size(148, 23);
             this.txtQuantity.TabIndex = 1;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(6, 32);
+            this.txtName.Location = new System.Drawing.Point(5, 24);
+            this.txtName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(169, 32);
+            this.txtName.Size = new System.Drawing.Size(148, 23);
             this.txtName.TabIndex = 0;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(203, 73);
+            this.label2.Location = new System.Drawing.Point(207, 60);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 21);
+            this.label2.Size = new System.Drawing.Size(51, 16);
             this.label2.TabIndex = 0;
             this.label2.Text = "الكمية: ";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(188, 147);
+            this.label4.Location = new System.Drawing.Point(215, 116);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 21);
+            this.label4.Size = new System.Drawing.Size(43, 16);
             this.label4.TabIndex = 0;
             this.label4.Text = "الوحدة";
             this.label4.Click += new System.EventHandler(this.label3_Click);
@@ -177,9 +183,9 @@ namespace ChemicalsInventory.UI
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(188, 105);
+            this.label3.Location = new System.Drawing.Point(168, 84);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 21);
+            this.label3.Size = new System.Drawing.Size(90, 16);
             this.label3.TabIndex = 0;
             this.label3.Text = "اسم المجموعة";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -187,9 +193,9 @@ namespace ChemicalsInventory.UI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(181, 32);
+            this.label1.Location = new System.Drawing.Point(174, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 21);
+            this.label1.Size = new System.Drawing.Size(84, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "اسم المركب: ";
             // 
@@ -197,11 +203,9 @@ namespace ChemicalsInventory.UI
             // 
             this.groupBox2.Controls.Add(this.dgvChemicals);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.groupBox2.Location = new System.Drawing.Point(289, 0);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox2.Location = new System.Drawing.Point(300, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox2.Size = new System.Drawing.Size(317, 344);
+            this.groupBox2.Size = new System.Drawing.Size(312, 262);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "قائمة المركبات";
@@ -222,19 +226,21 @@ namespace ChemicalsInventory.UI
             this.ItemId});
             this.dgvChemicals.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvChemicals.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvChemicals.Location = new System.Drawing.Point(3, 29);
+            this.dgvChemicals.Location = new System.Drawing.Point(3, 19);
+            this.dgvChemicals.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvChemicals.Name = "dgvChemicals";
             this.dgvChemicals.RowHeadersVisible = false;
             this.dgvChemicals.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvChemicals.Size = new System.Drawing.Size(311, 311);
+            this.dgvChemicals.Size = new System.Drawing.Size(306, 240);
             this.dgvChemicals.TabIndex = 0;
             // 
             // ItemName
             // 
-            this.ItemName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ItemName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.ItemName.DataPropertyName = "ItemName";
             this.ItemName.HeaderText = "الاسم";
             this.ItemName.Name = "ItemName";
+            this.ItemName.Width = 66;
             // 
             // ItemQuantity
             // 
@@ -242,7 +248,7 @@ namespace ChemicalsInventory.UI
             this.ItemQuantity.DataPropertyName = "ItemQuantity";
             this.ItemQuantity.HeaderText = "الكمية";
             this.ItemQuantity.Name = "ItemQuantity";
-            this.ItemQuantity.Width = 68;
+            this.ItemQuantity.Width = 67;
             // 
             // CategoryName
             // 
@@ -256,7 +262,7 @@ namespace ChemicalsInventory.UI
             this.ItemUnit.DataPropertyName = "ItemUnit";
             this.ItemUnit.HeaderText = "الوحدة";
             this.ItemUnit.Name = "ItemUnit";
-            this.ItemUnit.Width = 69;
+            this.ItemUnit.Width = 68;
             // 
             // CategoryId
             // 
@@ -274,14 +280,14 @@ namespace ChemicalsInventory.UI
             // 
             // ChemicalsList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(606, 344);
+            this.ClientSize = new System.Drawing.Size(612, 262);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
-            this.Font = new System.Drawing.Font("Frutiger LT Arabic 55 Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ChemicalsList";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;

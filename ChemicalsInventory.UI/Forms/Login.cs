@@ -42,5 +42,10 @@ namespace ChemicalsInventory.UI
                 return;
             }
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
