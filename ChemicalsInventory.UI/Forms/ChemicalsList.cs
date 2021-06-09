@@ -15,8 +15,11 @@ namespace ChemicalsInventory.UI
     {
         #region Properties
 
-        List<ChemicalModel> chemicals = new List<ChemicalModel>();
+        List<ItemModel> chemicals = new List<ItemModel>();
         int chemicalId;
+
+        List<CategoryModel> category = new List<CategoryModel>();
+        int _categoryId;
 
         #endregion
 
@@ -31,6 +34,7 @@ namespace ChemicalsInventory.UI
 
             //Load the data into the datagrid
             LoadChemicalsList();
+            LoadCategoryList();
         }
 
         #endregion
@@ -39,8 +43,16 @@ namespace ChemicalsInventory.UI
 
         private void LoadChemicalsList()
         {
-            chemicals = SqliteDataAccess.LoadChemicals();
+            chemicals = SqliteDataAccess.LoadItems();
             dgvChemicals.DataSource = chemicals;
+        }
+
+        private void LoadCategoryList()
+        {
+            category = SqliteDataAccess.LoadCategory();
+            cbCategory.DataSource = category;
+            cbCategory.DisplayMember = "CategoryName";
+            cbCategory.ValueMember = "CategoryId";
         }
 
         private void AddChemical()
@@ -51,13 +63,19 @@ namespace ChemicalsInventory.UI
                 return;
             }
 
-            ChemicalModel chemical = new ChemicalModel
+            if (cbCategory.SelectedIndex > -1)
+                _categoryId = Convert.ToInt32(cbCategory.SelectedValue.ToString());
+
+
+            ItemModel chemical = new ItemModel
             {
-                ChemicalName = txtName.Text,
-                ChemicalQuantity = Convert.ToInt32(txtQuantity.Text)
+                ItemName = txtName.Text,
+                ItemQuantity = Convert.ToInt32(txtQuantity.Text),
+                ItemUnit = cbUnit.SelectedItem.ToString(),
+                CategoryId= _categoryId
             };
 
-            SqliteDataAccess.AddChemical(chemical);
+            SqliteDataAccess.AddItem(chemical);
 
             MessageBox.Show("تم الاضافة بنجاح");
             txtName.Text = "";
@@ -74,14 +92,20 @@ namespace ChemicalsInventory.UI
                 return;
             }
 
-            ChemicalModel chemical = new ChemicalModel
+            if (cbCategory.SelectedIndex > -1)
+                _categoryId = Convert.ToInt32(cbCategory.SelectedValue.ToString());
+
+
+            ItemModel chemical = new ItemModel
             {
-                ChemicalId = chemicalId,
-                ChemicalName = txtName.Text,
-                ChemicalQuantity = Convert.ToInt32(txtQuantity.Text)
+                ItemId = chemicalId,
+                ItemName = txtName.Text,
+                ItemUnit = cbUnit.SelectedItem.ToString(),
+                ItemQuantity = Convert.ToInt32(txtQuantity.Text),
+                CategoryId = _categoryId
             };
 
-            SqliteDataAccess.UpdateChemical(chemical);
+            SqliteDataAccess.UpdateItem(chemical);
 
             MessageBox.Show("تم التعديل بنجاح");
 
@@ -143,9 +167,11 @@ namespace ChemicalsInventory.UI
                 int selectedrowindex = dgvChemicals.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = dgvChemicals.Rows[selectedrowindex];
 
-                txtName.Text = Convert.ToString(selectedRow.Cells["ChemicalName"].Value);
-                txtQuantity.Text = Convert.ToString(selectedRow.Cells["ChemicalQuantity"].Value);
-                chemicalId = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+                txtName.Text = Convert.ToString(selectedRow.Cells["ItemName"].Value);
+                txtQuantity.Text = Convert.ToString(selectedRow.Cells["ItemQuantity"].Value);
+                cbUnit.SelectedIndex = cbUnit.FindStringExact(selectedRow.Cells["ItemUnit"].Value.ToString());
+                cbCategory.SelectedIndex = cbCategory.FindStringExact(selectedRow.Cells["CategoryName"].Value.ToString());
+                chemicalId = Convert.ToInt32(selectedRow.Cells["ItemId"].Value);
             }
         }
 
@@ -169,5 +195,15 @@ namespace ChemicalsInventory.UI
         }
 
         #endregion
+
+        private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+       
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

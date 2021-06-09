@@ -59,54 +59,113 @@ namespace ChemicalsInventory.Logic
 
         #endregion
 
-        #region Chemicals
+        #region Items
 
-        public static List<ChemicalModel> LoadChemicals()
+        public static List<ItemModel> LoadItems()
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                var output = cnn.Query<ChemicalModel>("Select * from Chemical", new DynamicParameters());
+                var output = cnn.Query<ItemModel>("Select ItemName, ItemQuantity,Category.CategoryId,Category.CategoryName,ItemUnit from Item inner join Category on Item.CategoryId = Category.CategoryId ", new DynamicParameters());
+
                 return output.ToList();
             }
         }
 
-        public static void AddChemical(ChemicalModel chemical)
+        public static List<ItemModel> LoadItemsByCategory(int categoryId)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                cnn.Execute("Insert into Chemical (ChemicalName, ChemicalQuantity) values (@ChemicalName, @ChemicalQuantity)", chemical);
-            }
-        }
+                var output = cnn.Query<ItemModel>("select ItemId, ItemName,Category.CategoryId, Category.CategoryName from Item inner join Category on Item.CategoryId = Category.CategoryId where Item.CategoryId = @CategoryId", new { CategoryId = categoryId });
 
-        public static void RemoveChemical(ChemicalModel chemical)
-        {
-            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
-            {
-                cnn.Execute("Delete from Chemical where ChemicalId=@ChemicalId", chemical);
+                return output.ToList();
             }
         }
 
 
-        public static void UpdateChemical(ChemicalModel chemical)
+        public static void AddItem(ItemModel Item)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                cnn.Execute("Update Chemical set ChemicalName = @ChemicalName, ChemicalQuantity = @ChemicalQuantity", chemical);
+                cnn.Execute("Insert into Item (ItemName, ItemQuantity,CategoryId,ItemUnit) values (@ItemName, @ItemQuantity,@CategoryId,@ItemUnit)", Item);
+            }
+        }
+
+        public static void RemoveItem(ItemModel Item)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                cnn.Execute("Delete from Item where ItemId=@ItemId", Item);
+            }
+        }
+
+
+        public static void UpdateItem(ItemModel Item)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                cnn.Execute("Update Item set ItemQuantity = @ItemQuantity where ItemID =@ItemId", Item);
             }
 
         }
 
-        public static ChemicalModel GetChemicalById(int id)
+        public static ItemModel GetItemById(int id)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                var output = cnn.Query<ChemicalModel>("Select * from Chemical where ChemicalId =@ChemicalId", new { ChemicalId = id }).FirstOrDefault();
+                var output = cnn.Query<ItemModel>("Select * from Item where ItemId =@ItemId", new { ItemId = id }).FirstOrDefault();
                 return output;
             }
         }
 
         #endregion
 
+        #region Category
+
+        public static List<CategoryModel> LoadCategory()
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var output = cnn.Query<CategoryModel>("Select * from Category", new DynamicParameters());
+
+                return output.ToList();
+            }
+        }
+
+        public static void AddCategory(CategoryModel Category)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                cnn.Execute("Insert into Category (CategoryName) values (@CategoryName)", Category);
+            }
+        }
+
+        public static void RemoveCategory(CategoryModel Category)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                cnn.Execute("Delete from Category where CategoryId=@CategoryId", Category);
+            }
+        }
+
+
+        public static void UpdateCategory(CategoryModel Category)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                cnn.Execute("Update Category set CategoryName = @CategoryName where CategoryID =@CategoryId", Category);
+            }
+
+        }
+
+        public static CategoryModel GetCategoryById(int id)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var output = cnn.Query<CategoryModel>("Select * from Category where CategoryId =@CategoryId", new { CategoryId = id }).FirstOrDefault();
+                return output;
+            }
+        }
+        #endregion
 
     }
 }

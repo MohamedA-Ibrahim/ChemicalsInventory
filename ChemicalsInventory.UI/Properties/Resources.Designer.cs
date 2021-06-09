@@ -73,6 +73,26 @@ namespace ChemicalsInventory.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap business_report {
+            get {
+                object obj = ResourceManager.GetObject("business-report", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap business_report__1_ {
+            get {
+                object obj = ResourceManager.GetObject("business-report (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap chemicals {
             get {
                 object obj = ResourceManager.GetObject("chemicals", resourceCulture);

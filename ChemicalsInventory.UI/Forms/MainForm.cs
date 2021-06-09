@@ -43,5 +43,11 @@ namespace ChemicalsInventory.UI
             ChemicalsAddTake chemicalsAddTake = new ChemicalsAddTake();
             chemicalsAddTake.ShowDialog();
         }
+
+        private void MenuItemCategoryList_Click(object sender, EventArgs e)
+        {
+            CategoryList categoryList = new CategoryList();
+            categoryList.ShowDialog();
+        }
     }
 }

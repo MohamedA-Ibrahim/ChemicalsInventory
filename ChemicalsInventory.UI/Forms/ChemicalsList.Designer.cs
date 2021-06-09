@@ -30,6 +30,8 @@ namespace ChemicalsInventory.UI
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbUnit = new System.Windows.Forms.ComboBox();
+            this.cbCategory = new System.Windows.Forms.ComboBox();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
@@ -37,12 +39,17 @@ namespace ChemicalsInventory.UI
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvChemicals = new System.Windows.Forms.DataGridView();
-            this.ChemicalName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ChemicalQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CategoryId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChemicals)).BeginInit();
@@ -50,6 +57,8 @@ namespace ChemicalsInventory.UI
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbUnit);
+            this.groupBox1.Controls.Add(this.cbCategory);
             this.groupBox1.Controls.Add(this.btnEdit);
             this.groupBox1.Controls.Add(this.btnCancel);
             this.groupBox1.Controls.Add(this.btnSave);
@@ -57,6 +66,8 @@ namespace ChemicalsInventory.UI
             this.groupBox1.Controls.Add(this.txtQuantity);
             this.groupBox1.Controls.Add(this.txtName);
             this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
@@ -68,9 +79,29 @@ namespace ChemicalsInventory.UI
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "اضافة مركب";
             // 
+            // cbUnit
+            // 
+            this.cbUnit.FormattingEnabled = true;
+            this.cbUnit.Items.AddRange(new object[] {
+            "مليجرام",
+            "علبة"});
+            this.cbUnit.Location = new System.Drawing.Point(6, 144);
+            this.cbUnit.Name = "cbUnit";
+            this.cbUnit.Size = new System.Drawing.Size(169, 29);
+            this.cbUnit.TabIndex = 6;
+            // 
+            // cbCategory
+            // 
+            this.cbCategory.FormattingEnabled = true;
+            this.cbCategory.Location = new System.Drawing.Point(6, 108);
+            this.cbCategory.Name = "cbCategory";
+            this.cbCategory.Size = new System.Drawing.Size(169, 29);
+            this.cbCategory.TabIndex = 6;
+            this.cbCategory.SelectedIndexChanged += new System.EventHandler(this.cbCategory_SelectedIndexChanged);
+            // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(106, 123);
+            this.btnEdit.Location = new System.Drawing.Point(106, 223);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(94, 39);
             this.btnEdit.TabIndex = 5;
@@ -80,7 +111,7 @@ namespace ChemicalsInventory.UI
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(106, 180);
+            this.btnCancel.Location = new System.Drawing.Point(106, 280);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(94, 39);
             this.btnCancel.TabIndex = 3;
@@ -91,7 +122,7 @@ namespace ChemicalsInventory.UI
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(6, 180);
+            this.btnSave.Location = new System.Drawing.Point(6, 280);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(94, 39);
             this.btnSave.TabIndex = 4;
@@ -102,7 +133,7 @@ namespace ChemicalsInventory.UI
             // 
             // btnAddChemical
             // 
-            this.btnAddChemical.Location = new System.Drawing.Point(6, 123);
+            this.btnAddChemical.Location = new System.Drawing.Point(6, 223);
             this.btnAddChemical.Name = "btnAddChemical";
             this.btnAddChemical.Size = new System.Drawing.Size(94, 39);
             this.btnAddChemical.TabIndex = 2;
@@ -132,6 +163,26 @@ namespace ChemicalsInventory.UI
             this.label2.Size = new System.Drawing.Size(51, 21);
             this.label2.TabIndex = 0;
             this.label2.Text = "الكمية: ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(188, 147);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(44, 21);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "الوحدة";
+            this.label4.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(188, 105);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(88, 21);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "اسم المجموعة";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label1
             // 
@@ -163,9 +214,12 @@ namespace ChemicalsInventory.UI
             this.dgvChemicals.AllowUserToResizeRows = false;
             this.dgvChemicals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvChemicals.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ChemicalName,
-            this.ChemicalQuantity,
-            this.Id});
+            this.ItemName,
+            this.ItemQuantity,
+            this.CategoryName,
+            this.ItemUnit,
+            this.CategoryId,
+            this.ItemId});
             this.dgvChemicals.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvChemicals.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvChemicals.Location = new System.Drawing.Point(3, 29);
@@ -175,27 +229,48 @@ namespace ChemicalsInventory.UI
             this.dgvChemicals.Size = new System.Drawing.Size(311, 311);
             this.dgvChemicals.TabIndex = 0;
             // 
-            // ChemicalName
+            // ItemName
             // 
-            this.ChemicalName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ChemicalName.DataPropertyName = "ChemicalName";
-            this.ChemicalName.HeaderText = "الاسم";
-            this.ChemicalName.Name = "ChemicalName";
+            this.ItemName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ItemName.DataPropertyName = "ItemName";
+            this.ItemName.HeaderText = "الاسم";
+            this.ItemName.Name = "ItemName";
             // 
-            // ChemicalQuantity
+            // ItemQuantity
             // 
-            this.ChemicalQuantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.ChemicalQuantity.DataPropertyName = "ChemicalQuantity";
-            this.ChemicalQuantity.HeaderText = "الكمية";
-            this.ChemicalQuantity.Name = "ChemicalQuantity";
-            this.ChemicalQuantity.Width = 68;
+            this.ItemQuantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.ItemQuantity.DataPropertyName = "ItemQuantity";
+            this.ItemQuantity.HeaderText = "الكمية";
+            this.ItemQuantity.Name = "ItemQuantity";
+            this.ItemQuantity.Width = 68;
             // 
-            // Id
+            // CategoryName
             // 
-            this.Id.DataPropertyName = "ChemicalId";
-            this.Id.HeaderText = "ChemicalId";
-            this.Id.Name = "Id";
-            this.Id.Visible = false;
+            this.CategoryName.DataPropertyName = "CategoryName";
+            this.CategoryName.HeaderText = "المجموعة";
+            this.CategoryName.Name = "CategoryName";
+            // 
+            // ItemUnit
+            // 
+            this.ItemUnit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.ItemUnit.DataPropertyName = "ItemUnit";
+            this.ItemUnit.HeaderText = "الوحدة";
+            this.ItemUnit.Name = "ItemUnit";
+            this.ItemUnit.Width = 69;
+            // 
+            // CategoryId
+            // 
+            this.CategoryId.DataPropertyName = "CategoryId";
+            this.CategoryId.HeaderText = "CategoryId";
+            this.CategoryId.Name = "CategoryId";
+            this.CategoryId.Visible = false;
+            // 
+            // ItemId
+            // 
+            this.ItemId.DataPropertyName = "ItemId";
+            this.ItemId.HeaderText = "ItemId";
+            this.ItemId.Name = "ItemId";
+            this.ItemId.Visible = false;
             // 
             // ChemicalsList
             // 
@@ -233,8 +308,15 @@ namespace ChemicalsInventory.UI
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgvChemicals;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ChemicalName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ChemicalQuantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.ComboBox cbCategory;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cbUnit;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemQuantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CategoryName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemUnit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CategoryId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemId;
     }
 }

@@ -52,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\CategoryList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CategoryList.Designer.cs">
+      <DependentUpon>CategoryList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ChemicalsAddTake.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,12 +90,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Resources\business-report %281%29.png" />
+    <None Include="Resources\business-report.png" />
     <None Include="Resources\add.png" />
     <None Include="Resources\diskette.png" />
     <None Include="Resources\chemicals.png" />
     <None Include="Resources\man.png" />
     <None Include="Resources\logout %281%29.png" />
     <None Include="Resources\enter.png" />
+    <EmbeddedResource Include="Forms\CategoryList.resx">
+      <DependentUpon>CategoryList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ChemicalsAddTake.resx">
       <DependentUpon>ChemicalsAddTake.cs</DependentUpon>
     </EmbeddedResource>

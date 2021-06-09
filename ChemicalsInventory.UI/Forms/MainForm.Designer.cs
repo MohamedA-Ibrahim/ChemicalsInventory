@@ -31,9 +31,11 @@ namespace ChemicalsInventory.UI
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.MenuItemCategoryList = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemChemicalsAddTake = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemChemicalsList = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemUsersList = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemPrintReport = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemLogout = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -44,13 +46,22 @@ namespace ChemicalsInventory.UI
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuItemChemicalsAddTake,
             this.MenuItemChemicalsList,
+            this.MenuItemCategoryList,
             this.MenuItemUsersList,
+            this.MenuItemPrintReport,
             this.MenuItemLogout});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(665, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(792, 29);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // MenuItemCategoryList
+            // 
+            this.MenuItemCategoryList.Name = "MenuItemCategoryList";
+            this.MenuItemCategoryList.Size = new System.Drawing.Size(81, 25);
+            this.MenuItemCategoryList.Text = "المجموعات";
+            this.MenuItemCategoryList.Click += new System.EventHandler(this.MenuItemCategoryList_Click);
             // 
             // MenuItemChemicalsAddTake
             // 
@@ -76,6 +87,13 @@ namespace ChemicalsInventory.UI
             this.MenuItemUsersList.Text = "قائمة المستخدمين";
             this.MenuItemUsersList.Click += new System.EventHandler(this.MenuItemUsersList_Click);
             // 
+            // MenuItemPrintReport
+            // 
+            this.MenuItemPrintReport.Image = global::ChemicalsInventory.UI.Properties.Resources.business_report__1_;
+            this.MenuItemPrintReport.Name = "MenuItemPrintReport";
+            this.MenuItemPrintReport.Size = new System.Drawing.Size(131, 25);
+            this.MenuItemPrintReport.Text = "تقرير طلبات الجرد";
+            // 
             // MenuItemLogout
             // 
             this.MenuItemLogout.Image = global::ChemicalsInventory.UI.Properties.Resources.logout__1_;
@@ -88,7 +106,7 @@ namespace ChemicalsInventory.UI
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(665, 603);
+            this.ClientSize = new System.Drawing.Size(792, 603);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Frutiger LT Arabic 55 Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -99,6 +117,7 @@ namespace ChemicalsInventory.UI
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ادارة  مخزن المواد الكيميائية";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -113,5 +132,7 @@ namespace ChemicalsInventory.UI
         private System.Windows.Forms.ToolStripMenuItem MenuItemUsersList;
         private System.Windows.Forms.ToolStripMenuItem MenuItemLogout;
         private System.Windows.Forms.ToolStripMenuItem MenuItemChemicalsAddTake;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemCategoryList;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemPrintReport;
     }
 }
